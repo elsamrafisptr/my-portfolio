@@ -1,0 +1,7 @@
+# robots.txt for https://elsamrafisptr.github.io/my-portfolio
+
+User-agent: *
+Allow: /
+Disallow: /private/
+
+Sitemap: https://elsamrafisptr.github.io/my-portfolio/sitemap.xml

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Layouts from "@/components/layouts/Layouts";
+import ThemeProviderContext from "@/components/elements/theme-provider";
 
 const geistMono = Geist_Mono({
   subsets: ["latin"],
@@ -9,9 +10,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  applicationName: "arnawadigital",
+  applicationName: "Portfolio | Elsam Rafi Saputra",
   appleWebApp: {
-    title: "arnawadigital",
+    title: "Portfolio | Elsam Rafi Saputra",
     capable: true,
     statusBarStyle: "default",
   },
@@ -21,14 +22,16 @@ export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NODE_ENV === "development"
       ? "http://localhost:3000"
-      : "https://arnawadigital.com",
+      : "https://elsamrafisptr.github.io/my-portfolio",
   ),
-  description: "",
-  keywords: "",
-  creator: "",
+  description:
+    "This is a portfolio by elsam rafi saputra, software engineer that specializing in software development and artificial intelligence.",
+  keywords:
+    "Elsam, Rafi, Saputra, Elsam Rafi Saputra, Software, Software Engineer, AI, Artificial Intelligence, Portfolio, Personal Website",
+  creator: "Elsam Rafi Saputra",
   authors: {
-    name: "",
-    url: "",
+    name: "Elsam Rafi Saputra",
+    url: "https://github.com/elsamrafisptr/",
   },
   openGraph: {
     images: "",
@@ -49,12 +52,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning={true}>
       <body
         className={`${geistMono.className} antialiased`}
-        suppressHydrationWarning
+        suppressHydrationWarning={true}
       >
-        <Layouts>{children}</Layouts>
+        <ThemeProviderContext>
+          <Layouts>{children}</Layouts>
+        </ThemeProviderContext>
       </body>
     </html>
   );
