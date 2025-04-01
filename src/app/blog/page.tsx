@@ -12,11 +12,7 @@ export const metadata: Metadata = {
 };
 
 const Blog = () => {
-  return (
-    <main className="min-h-screen flex justify-center items-center">
-      Blog Page is Under Maintenance
-    </main>
-  );
+  return <main className="flex min-h-screen items-center justify-center">Blog Page is Under Maintenance</main>;
 };
 
 export default Blog;

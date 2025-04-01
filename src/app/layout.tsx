@@ -20,9 +20,7 @@ export const metadata: Metadata = {
     telephone: false,
   },
   metadataBase: new URL(
-    process.env.NODE_ENV === "development"
-      ? "http://localhost:3000"
-      : "https://elsamrafisptr.github.io/my-portfolio",
+    process.env.NODE_ENV === "development" ? "http://localhost:3000" : "https://elsamrafisptr.github.io/my-portfolio",
   ),
   description:
     "This is a portfolio by elsam rafi saputra, software engineer that specializing in software development and artificial intelligence.",
@@ -53,10 +51,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
-      <body
-        className={`${geistMono.className} antialiased`}
-        suppressHydrationWarning={true}
-      >
+      <body className={`${geistMono.className} antialiased`} suppressHydrationWarning={true}>
         <ThemeProviderContext>
           <Layouts>{children}</Layouts>
         </ThemeProviderContext>

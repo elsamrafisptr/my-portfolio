@@ -19,12 +19,10 @@ const Layout = ({ children }: { children: ReactNode }) => {
   }
 
   return (
-    <div className="relative flex min-h-screen w-full flex-col justify-center overflow-x-hidden rounded-lg bg-background md:shadow-xl">
+    <div className="relative flex min-h-screen w-full flex-col justify-center overflow-x-hidden rounded-lg bg-background dark:bg-black/75 md:shadow-xl">
       {!isMobile && (
         <InteractiveGridPattern
-          className={cn(
-            "opacity-50 [mask-image:radial-gradient(720px_circle_at_center,white,transparent)]",
-          )}
+          className={cn("opacity-50 [mask-image:radial-gradient(720px_circle_at_center,white,transparent)]")}
           width={20}
           height={20}
           squares={[80, 80]}
@@ -34,7 +32,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
       <div className="relative z-10 flex w-full flex-col justify-center lg:flex-row lg:gap-5">
         <MenuBar />
         <main
-          className="no-scrollbar h-full w-full scroll-smooth transition-all px-5 duration-300 lg:px-12 lg:min-h-screen lg:max-w-[720px] bg-white shadow-2xl shadow-gray-200"
+          className="no-scrollbar h-full w-full scroll-smooth bg-white px-5 shadow-2xl shadow-gray-200 transition-all duration-300 dark:bg-black/75 dark:shadow-gray-600 lg:min-h-screen lg:max-w-[720px] lg:px-12"
           role="main"
         >
           {children}

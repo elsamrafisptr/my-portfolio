@@ -13,6 +13,24 @@ export interface WorksContentProps {
 
 export const WorksContent: ReadonlyArray<WorksContentProps> = [
   {
+    title: "Software Engineer",
+    type: "Internship",
+    work_type: "Remote",
+    company_name: "SCHNAP",
+    company_contacts: ["https://schnap.com.au"],
+    company_location: "Australia",
+    description: "",
+    milestones: [
+      "Built entire the website software as a service (SaaS) product using WordPress, Custom WordPress Plugin, FastAPI Backend, and Stripe payment for membership.",
+      "Built home server from laptop and PC using Linux Ubuntu and NGINX for hosting the API Service and set up the automation process for ease of use and maintainability.",
+      "Played a role in optimizing app performance, usability, and maintainability, and contributing to its success in delivering and deploying the website to the client.",
+      "Built automation tasks using Python and Make.com for decreasing and optimizing the current system in the company by integrating 3rd Party API, Data Scraping, and Webhooks.",
+      "Monitor, test, and report everyday tasks of the website in the agile software development lifecycle and work remotely (WFA)",
+    ],
+    start_date: "Nov 2024",
+    end_date: "Present",
+  },
+  {
     title: "Fullstack Developer",
     type: "Full Time",
     work_type: "Remote",

@@ -37,8 +37,8 @@ const MenuBar = () => {
   const toggleTheme = () => setTheme(isDarkMode ? "light" : "dark");
 
   return (
-    <header className="fixed flex justify-between items-center bottom-8 left-1/2 -translate-x-1/2 z-50">
-      <nav className="flex items-center p-1 bg-white border rounded-lg">
+    <header className="fixed bottom-8 left-1/2 z-50 flex -translate-x-1/2 items-center justify-between">
+      <nav className="flex items-center rounded-lg border bg-white p-1">
         {MENU_ITEMS.map(({ href, icon: Icon, label }) => {
           const isActive = pathname === href;
           return (
@@ -47,7 +47,7 @@ const MenuBar = () => {
               href={href}
               aria-label={label}
               className={cn(
-                "group p-4 flex justify-center items-center rounded-md hover:bg-gray-100 transition-colors duration-150",
+                "group flex items-center justify-center rounded-md p-4 transition-colors duration-150 hover:bg-gray-100",
                 isActive && "text-gray-800",
               )}
             >
@@ -63,22 +63,12 @@ const MenuBar = () => {
         <button
           onClick={toggleTheme}
           aria-label="Toggle Theme"
-          className="group p-4 flex justify-center items-center rounded-md hover:bg-gray-100 transition-colors duration-150"
+          className="group flex items-center justify-center rounded-md p-4 transition-colors duration-150 hover:bg-gray-100"
         >
           {isDarkMode ? (
-            <Moon
-              className={cn(
-                "size-5 transition-colors duration-100 group-hover:text-gray-800",
-                "text-gray-400",
-              )}
-            />
+            <Moon className={cn("size-5 transition-colors duration-100 group-hover:text-gray-800", "text-gray-400")} />
           ) : (
-            <Sun
-              className={cn(
-                "size-5 transition-colors duration-100 group-hover:text-gray-800",
-                "text-gray-400",
-              )}
-            />
+            <Sun className={cn("size-5 transition-colors duration-100 group-hover:text-gray-800", "text-gray-400")} />
           )}
         </button>
       </nav>

@@ -12,11 +12,7 @@ export const metadata: Metadata = {
 };
 
 const Dashboard = () => {
-  return (
-    <main className="min-h-screen flex justify-center items-center">
-      Dashboard Page is Under Maintenance
-    </main>
-  );
+  return <main className="flex min-h-screen items-center justify-center">Dashboard Page is Under Maintenance</main>;
 };
 
 export default Dashboard;

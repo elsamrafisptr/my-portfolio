@@ -4,16 +4,16 @@ import { Separator } from "@/components/ui/separator";
 
 const ProjectsPage = () => {
   return (
-    <main className="py-12 min-h-screen">
+    <main className="min-h-screen py-12">
       {/* Hero Section */}
       <header className="mb-4">
         <h1 className="text-2xl font-bold">Hey, I&apos;m Sam</h1>
-        <ul className="flex gap-4 text-gray-600 mt-1">
+        <ul className="mt-1 flex gap-4 text-gray-600 dark:text-gray-300">
           <li>Remote Worker</li>|<li>Based in Bandung, Indonesia</li>
         </ul>
       </header>
 
-      <Separator className="my-6" />
+      <Separator className="my-6 dark:bg-gray-300" />
 
       {/* Works Experiences */}
       <section className="mb-12">

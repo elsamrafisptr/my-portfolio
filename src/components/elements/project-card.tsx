@@ -1,11 +1,5 @@
-import Image from "next/image";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "../ui/card";
+import Image from "./image-wrapper";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/card";
 import { urlEndpoint } from "@/common/constant";
 
 interface ProjectCardProps {
@@ -24,19 +18,17 @@ const ProjectCard = ({ title, desc, date, imageUrl }: ProjectCardProps) => {
           alt={title || "Project Image"}
           width={1024}
           height={1024}
-          className="bg-gray-200 aspect-video object-cover rounded"
           loading="lazy"
+          className="aspect-video rounded bg-gray-200 object-cover"
           priority={false}
         />
       </CardContent>
-      <CardHeader className="p-0 mt-2">
-        <p className="text-sm text-gray-500">{date}</p>
-        <CardTitle className="text-base font-medium line-clamp-1 tracking-normal">
+      <CardHeader className="mt-2 p-0">
+        <p className="text-sm text-gray-500 dark:text-gray-300">{date}</p>
+        <CardTitle className="line-clamp-1 text-base font-medium tracking-normal text-black dark:text-white">
           {title}
         </CardTitle>
-        <CardDescription className="line-clamp-2 text-xs text-gray-600">
-          {desc}
-        </CardDescription>
+        <CardDescription className="line-clamp-2 text-xs text-gray-600 dark:text-gray-200">{desc}</CardDescription>
       </CardHeader>
     </Card>
   );

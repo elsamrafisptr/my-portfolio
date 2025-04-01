@@ -1,16 +1,7 @@
-import {
-  AchievementsContent,
-  AchievementsContentProps,
-} from "../components/achievement-content";
-import {
-  EducationsContent,
-  EducationsContentProps,
-} from "../components/education-content";
+import { AchievementsContent, AchievementsContentProps } from "../components/achievement-content";
+import { EducationsContent, EducationsContentProps } from "../components/education-content";
 import { OrgsContent, OrgsContentProps } from "../components/org-content";
-import {
-  SkillsContent,
-  SkillsContentProps,
-} from "../components/skills-content";
+import { SkillsContent, SkillsContentProps } from "../components/skills-content";
 import { WorksContent, WorksContentProps } from "../components/works-content";
 
 export interface AboutMeContentProps {

@@ -10,8 +10,8 @@ const LatestProjects = ({ limit }: { limit?: number }) => {
 
   return (
     <section className="mb-12">
-      <h2 className="text-lg font-semibold text-gray-800">Latest Projects</h2>
-      <div className="mt-4 grid grid-cols-2 md:grid-cols-3 gap-6">
+      <h2 className="text-lg font-semibold text-gray-800 dark:text-gray-100">Latest Projects</h2>
+      <div className="mt-4 grid grid-cols-2 gap-6 md:grid-cols-3">
         {ProjectsContent.slice(0, displayLimit).map((item, index) => (
           <ProjectCard
             key={index}
