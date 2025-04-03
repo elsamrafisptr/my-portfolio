@@ -7,7 +7,7 @@ const ProjectsPage = () => {
     <main className="min-h-screen py-12">
       {/* Hero Section */}
       <header className="mb-4">
-        <h1 className="text-2xl font-bold">Hey, I&apos;m Sam</h1>
+        <h1 className="text-2xl font-bold">My Portfolio Projects</h1>
         <ul className="mt-1 flex gap-4 text-gray-600 dark:text-gray-300">
           <li>Remote Worker</li>|<li>Based in Bandung, Indonesia</li>
         </ul>
