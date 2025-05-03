@@ -1,3 +1,3 @@
-import HomePage from "./sections/home-page";
+import HomePage from './sections/home-page'
 
-export default HomePage;
+export default HomePage

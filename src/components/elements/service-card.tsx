@@ -1,4 +1,11 @@
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle
+} from '../ui/card'
 
 const ServiceCard = () => {
   return (
@@ -14,7 +21,7 @@ const ServiceCard = () => {
         <p>Card Footer</p>
       </CardFooter>
     </Card>
-  );
-};
+  )
+}
 
-export default ServiceCard;
+export default ServiceCard

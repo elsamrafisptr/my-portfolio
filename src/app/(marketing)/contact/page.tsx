@@ -1,5 +1,6 @@
-import ContactPage from "@/components/layouts/contact";
-import { Metadata } from "next";
+import { Metadata } from 'next'
+
+import ContactPage from '@/components/layouts/contact'
 
 export const metadata: Metadata = {
   title: `Contact | Elsam Rafi Saputra`,
@@ -7,12 +8,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: `Contact | Elsam Rafi Saputra`,
     description: `Software & AI Engineer Enthusiast`,
-    authors: `Elsam Rafi Saputra`,
-  },
-};
+    authors: `Elsam Rafi Saputra`
+  }
+}
 
 const Contact = () => {
-  return <ContactPage />;
-};
+  return <ContactPage />
+}
 
-export default Contact;
+export default Contact

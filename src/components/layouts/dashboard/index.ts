@@ -1,3 +1,3 @@
-import DashboardPage from "./sections/dashboard-page";
+import DashboardPage from './sections/dashboard-page'
 
-export default DashboardPage;
+export default DashboardPage

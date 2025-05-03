@@ -1,5 +1,6 @@
-import Homepage from "@/components/layouts/home";
-import { Metadata } from "next";
+import { Metadata } from 'next'
+
+import Homepage from '@/components/layouts/home'
 
 export const metadata: Metadata = {
   title: `Elsam Rafi Saputra`,
@@ -7,12 +8,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: `Elsam Rafi Saputra`,
     description: `Software & AI Engineer Enthusiast`,
-    authors: `Elsam Rafi Saputra`,
-  },
-};
+    authors: `Elsam Rafi Saputra`
+  }
+}
 
 const Home = () => {
-  return <Homepage />;
-};
+  return <Homepage />
+}
 
-export default Home;
+export default Home

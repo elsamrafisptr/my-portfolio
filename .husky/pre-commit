@@ -1,0 +1,9 @@
+echo '🏗️👷 Styling, testing and building your project before committing'
+
+npm run format
+
+npm run lint
+
+npm run build
+
+echo '✅✅✅✅ You win this time... I am committing this now. ✅✅✅✅'

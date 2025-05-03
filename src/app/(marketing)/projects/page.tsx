@@ -1,5 +1,6 @@
-import ProjectsPage from "@/components/layouts/projects";
-import { Metadata } from "next";
+import { Metadata } from 'next'
+
+import ProjectsPage from '@/components/layouts/projects'
 
 export const metadata: Metadata = {
   title: `Projects | Elsam Rafi Saputra`,
@@ -7,12 +8,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: `Projects | Elsam Rafi Saputra`,
     description: `Software & AI Engineer Enthusiast`,
-    authors: `Elsam Rafi Saputra`,
-  },
-};
+    authors: `Elsam Rafi Saputra`
+  }
+}
 
 const Projects = () => {
-  return <ProjectsPage />;
-};
+  return <ProjectsPage />
+}
 
-export default Projects;
+export default Projects

@@ -1,3 +1,3 @@
-import BlogPage from "./sections/blog-page";
+import BlogPage from './sections/blog-page'
 
-export default BlogPage;
+export default BlogPage

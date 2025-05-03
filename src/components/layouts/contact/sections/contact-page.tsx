@@ -1,5 +1,5 @@
 const ContactPage = () => {
-  return <main className="flex min-h-screen items-center justify-center">Contact Page is Under Maintenance</main>;
-};
+  return <></>
+}
 
-export default ContactPage;
+export default ContactPage

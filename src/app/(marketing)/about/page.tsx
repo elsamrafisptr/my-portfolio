@@ -1,5 +1,6 @@
-import AboutPage from "@/components/layouts/about";
-import { Metadata } from "next";
+import { Metadata } from 'next'
+
+import AboutPage from '@/components/layouts/about'
 
 export const metadata: Metadata = {
   title: `About | Elsam Rafi Saputra`,
@@ -7,12 +8,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: `About | Elsam Rafi Saputra`,
     description: `Software & AI Engineer Enthusiast`,
-    authors: `Elsam Rafi Saputra`,
-  },
-};
+    authors: `Elsam Rafi Saputra`
+  }
+}
 
 const About = () => {
-  return <AboutPage />;
-};
+  return <AboutPage />
+}
 
-export default About;
+export default About

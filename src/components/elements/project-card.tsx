@@ -1,12 +1,13 @@
-import Image from "./image-wrapper";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/card";
-import { urlEndpoint } from "@/common/constant";
+import { urlEndpoint } from '@/common/constant'
+
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../ui/card'
+import Image from './image-wrapper'
 
 interface ProjectCardProps {
-  title: string;
-  desc: string;
-  date: string;
-  imageUrl: string;
+  title: string
+  desc: string
+  date: string
+  imageUrl: string
 }
 
 const ProjectCard = ({ title, desc, date, imageUrl }: ProjectCardProps) => {
@@ -15,7 +16,7 @@ const ProjectCard = ({ title, desc, date, imageUrl }: ProjectCardProps) => {
       <CardContent className="p-0">
         <Image
           src={urlEndpoint + imageUrl}
-          alt={title || "Project Image"}
+          alt={title || 'Project Image'}
           width={1024}
           height={1024}
           loading="lazy"
@@ -28,10 +29,12 @@ const ProjectCard = ({ title, desc, date, imageUrl }: ProjectCardProps) => {
         <CardTitle className="line-clamp-1 text-base font-medium tracking-normal text-black dark:text-white">
           {title}
         </CardTitle>
-        <CardDescription className="line-clamp-2 text-xs text-gray-600 dark:text-gray-200">{desc}</CardDescription>
+        <CardDescription className="line-clamp-2 text-xs text-gray-600 dark:text-gray-200">
+          {desc}
+        </CardDescription>
       </CardHeader>
     </Card>
-  );
-};
+  )
+}
 
-export default ProjectCard;
+export default ProjectCard

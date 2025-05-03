@@ -1,3 +1,3 @@
-import AboutPage from "./sections/about-page";
+import AboutPage from './sections/about-page'
 
-export default AboutPage;
+export default AboutPage

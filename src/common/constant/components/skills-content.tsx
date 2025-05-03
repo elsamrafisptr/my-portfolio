@@ -1,64 +1,64 @@
 export interface SkillsContentProps {
-  title: string;
-  skills: SkillItemProps[];
+  title: string
+  skills: SkillItemProps[]
 }
 
 export interface SkillItemProps {
-  title: string;
-  logo: string;
+  title: string
+  logo: string
 }
 
 export const SkillsContent: ReadonlyArray<SkillsContentProps> = [
   {
-    title: "Frameworks",
+    title: 'Frameworks',
     skills: [
       {
-        title: "",
-        logo: "",
+        title: '',
+        logo: ''
       },
       {
-        title: "",
-        logo: "",
-      },
-    ],
+        title: '',
+        logo: ''
+      }
+    ]
   },
   {
-    title: "Programming Languages",
+    title: 'Programming Languages',
     skills: [
       {
-        title: "",
-        logo: "",
+        title: '',
+        logo: ''
       },
       {
-        title: "",
-        logo: "",
-      },
-    ],
+        title: '',
+        logo: ''
+      }
+    ]
   },
   {
-    title: "Libraries",
+    title: 'Libraries',
     skills: [
       {
-        title: "",
-        logo: "",
+        title: '',
+        logo: ''
       },
       {
-        title: "",
-        logo: "",
-      },
-    ],
+        title: '',
+        logo: ''
+      }
+    ]
   },
   {
-    title: "Tools and Provider",
+    title: 'Tools and Provider',
     skills: [
       {
-        title: "",
-        logo: "",
+        title: '',
+        logo: ''
       },
       {
-        title: "",
-        logo: "",
-      },
-    ],
-  },
-] as const;
+        title: '',
+        logo: ''
+      }
+    ]
+  }
+] as const

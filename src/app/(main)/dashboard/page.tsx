@@ -1,5 +1,6 @@
-import React from "react";
-import { Metadata } from "next";
+import { Metadata } from 'next'
+
+import React from 'react'
 
 export const metadata: Metadata = {
   title: `Dashboard | Elsam Rafi Saputra`,
@@ -7,12 +8,16 @@ export const metadata: Metadata = {
   openGraph: {
     title: `Dashboard | Elsam Rafi Saputra`,
     description: `Software & AI Engineer Enthusiast`,
-    authors: `Elsam Rafi Saputra`,
-  },
-};
+    authors: `Elsam Rafi Saputra`
+  }
+}
 
 const Dashboard = () => {
-  return <main className="flex min-h-screen items-center justify-center">Dashboard Page is Under Maintenance</main>;
-};
+  return (
+    <main className="flex min-h-screen items-center justify-center">
+      Dashboard Page is Under Maintenance
+    </main>
+  )
+}
 
-export default Dashboard;
+export default Dashboard
