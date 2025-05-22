@@ -1,4 +1,4 @@
-import { urlEndpoint } from '@/common/constant'
+import { urlEndpoint } from '@/constants/contents'
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../ui/card'
 import Image from './image-wrapper'

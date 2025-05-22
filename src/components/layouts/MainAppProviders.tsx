@@ -5,18 +5,14 @@ import { ReactNode } from 'react'
 
 import LoadingPage from './LoadingPage'
 
-const Layout = (props: Readonly<{ children: ReactNode }>) => {
+const MainAppProviders = (props: Readonly<{ children: ReactNode }>) => {
   const hasMounted = useHasMounted()
 
   if (!hasMounted) {
     return <LoadingPage />
   }
 
-  return (
-    <main className="flex h-screen w-full justify-center bg-white dark:bg-white">
-      {props.children}
-    </main>
-  )
+  return <main>{props.children}</main>
 }
 
-export default Layout
+export default MainAppProviders

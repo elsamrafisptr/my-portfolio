@@ -1,9 +1,10 @@
 import type { Metadata } from 'next'
 import { Geist_Mono } from 'next/font/google'
 
-import ThemeProviderContext from '@/components/elements/theme-provider'
+import { routing } from '@/lib/i18n/i18nRouting'
 
 import Layouts from '@/components/layouts/Layouts'
+import ThemeProviderContext from '@/components/layouts/ThemeProviders'
 
 import './globals.css'
 
@@ -49,19 +50,20 @@ export const metadata: Metadata = {
   }
 }
 
-export default function RootLayout({
-  children
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+export default async function RootLayout(
+  props: Readonly<{
+    children: React.ReactNode
+    params: Promise<{ locale: string }>
+  }>
+) {
   return (
-    <html lang="en" suppressHydrationWarning={true}>
+    <html lang={routing.defaultLocale} suppressHydrationWarning={true}>
       <body
         className={`${geistMono.className} antialiased`}
         suppressHydrationWarning={true}
       >
         <ThemeProviderContext>
-          <Layouts>{children}</Layouts>
+          <Layouts>{props.children}</Layouts>
         </ThemeProviderContext>
       </body>
     </html>

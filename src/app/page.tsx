@@ -1,6 +1,18 @@
-import { Metadata } from 'next'
+import type { Metadata } from 'next'
+import dynamic from 'next/dynamic'
 
-import Homepage from '@/components/layouts/home'
+import HomePage from '@/modules/home'
+
+const MaintenancePage = dynamic(() => import('@/components/layouts/MaintenancePage'), {
+  ssr: true,
+  loading: () => (
+    <main
+      role="status"
+      aria-live="polite"
+      className="h-screen w-full bg-white dark:bg-white"
+    />
+  )
+})
 
 export const metadata: Metadata = {
   title: `Elsam Rafi Saputra`,
@@ -13,7 +25,11 @@ export const metadata: Metadata = {
 }
 
 const Home = () => {
-  return <Homepage />
+  const isMaintained: boolean = false
+
+  if (!isMaintained) return <MaintenancePage />
+
+  return <HomePage />
 }
 
 export default Home

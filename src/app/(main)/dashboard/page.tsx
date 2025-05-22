@@ -1,6 +1,18 @@
-import { Metadata } from 'next'
+import type { Metadata } from 'next'
+import dynamic from 'next/dynamic'
 
-import React from 'react'
+import DashboardPage from '@/modules/dashboard'
+
+const MaintenancePage = dynamic(() => import('@/components/layouts/MaintenancePage'), {
+  ssr: true,
+  loading: () => (
+    <main
+      role="status"
+      aria-live="polite"
+      className="h-screen w-full bg-white dark:bg-white"
+    />
+  )
+})
 
 export const metadata: Metadata = {
   title: `Dashboard | Elsam Rafi Saputra`,
@@ -13,11 +25,11 @@ export const metadata: Metadata = {
 }
 
 const Dashboard = () => {
-  return (
-    <main className="flex min-h-screen items-center justify-center">
-      Dashboard Page is Under Maintenance
-    </main>
-  )
+  const isMaintained: boolean = true
+
+  if (!isMaintained) return <MaintenancePage />
+
+  return <DashboardPage />
 }
 
 export default Dashboard
