@@ -39,7 +39,7 @@ const Image = ({
       <NextImage
         className={clsx(
           'transition-all duration-700 ease-in-out',
-          isLoading ? 'scale-105 blur-md grayscale' : 'scale-100 blur-0 grayscale-0',
+          isLoading ? 'scale-105 blur-md grayscale' : 'blur-0 scale-100 grayscale-0',
           rounded,
           className
         )}

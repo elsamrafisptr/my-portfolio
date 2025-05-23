@@ -1,7 +1,7 @@
-import React from 'react'
+import LoadingPage from '@/components/layouts/LoadingPage'
 
 const Loading = () => {
-  return <div>Loading</div>
+  return <LoadingPage />
 }
 
 export default Loading

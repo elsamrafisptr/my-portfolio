@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 const Dashboard = () => {
   const isMaintained: boolean = true
 
-  if (!isMaintained) return <MaintenancePage />
+  if (isMaintained) return <MaintenancePage />
 
   return <DashboardPage />
 }
