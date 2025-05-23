@@ -13,4 +13,4 @@ jobs:
         uses: ./.github/workflows/setup-node
 
       - name: Code style ✅
-        run: npm run check-code
+        run: npm run format:check
