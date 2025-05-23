@@ -1,4 +1,6 @@
 import SectionNavigation from '@/components/elements/SectionNavigation'
+import ServiceCard from '@/components/elements/service-card'
+import { HomeContent } from '@/constants/contents'
 
 const Services = () => {
   return (
@@ -6,12 +8,28 @@ const Services = () => {
       <SectionNavigation title="Services" />
       <div className="grid grid-cols-2 gap-4">
         <div className="flex w-full flex-col gap-4">
-          <article className="h-24 w-full bg-gray-200"></article>
-          <article className="h-48 w-full bg-gray-200"></article>
+          {HomeContent.services.slice(0, 4).map(value => {
+            return (
+              <ServiceCard
+                key={value.slug}
+                img={value.assetsImage[0]!}
+                title={value.title}
+                desc={value.description}
+              />
+            )
+          })}
         </div>
         <div className="flex w-full flex-col gap-4">
-          <article className="h-32 w-full bg-gray-200"></article>
-          <article className="h-16 w-full bg-gray-200"></article>
+          {HomeContent.services.slice(4, HomeContent.services.length).map(value => {
+            return (
+              <ServiceCard
+                key={value.slug}
+                img={value.assetsImage[0] || ''}
+                title={value.title}
+                desc={value.description}
+              />
+            )
+          })}
         </div>
       </div>
     </div>

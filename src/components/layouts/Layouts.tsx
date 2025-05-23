@@ -15,7 +15,7 @@ const Layout = (props: Readonly<{ children: ReactNode }>) => {
 
   return (
     <main className="relative flex min-h-screen w-full flex-col items-center justify-center bg-gray-50 dark:bg-gray-50">
-      <section className="min-h-screen w-full bg-gray-50 p-2 pb-20 md:w-[528px] md:p-6 dark:bg-gray-50">
+      <section className="min-h-screen w-full bg-gray-50 p-2 pb-20 md:w-[552px] md:p-6 md:pb-24 dark:bg-gray-50">
         {props.children}
       </section>
       <MenuBar />

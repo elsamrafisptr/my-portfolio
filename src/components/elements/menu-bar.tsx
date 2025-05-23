@@ -67,7 +67,7 @@ const MobileMenu = () => {
       animate={{ y: 0, opacity: 1, scale: 1 }}
       exit={{ y: 100, opacity: 0, scale: 0 }}
       transition={{ bounceStiffness: 0, duration: 0.3, easings: ['easeIn'] }}
-      className="absolute bottom-20 left-0 flex w-full justify-around p-2"
+      className="absolute bottom-[72px] left-0 flex w-full justify-around p-2"
       role="menu"
     >
       <div className="grid w-full grid-cols-3 items-center justify-center gap-4 rounded-lg border bg-white p-6 dark:bg-white">
@@ -123,14 +123,14 @@ const MenuBar = () => {
 
   return (
     <header className="fixed bottom-0 z-50 flex w-full items-center justify-center p-2 md:p-6">
-      <nav className="flex w-full items-center justify-between rounded-lg border bg-white p-1 md:w-[480px]">
+      <nav className="flex w-full items-center justify-between rounded-lg border bg-white p-1 md:w-[504px]">
         <div className="flex items-center gap-1">
           {isMobile ? (
             <button
               onClick={toggleMenu}
               aria-label="Open Menu"
               aria-expanded={menuOpen}
-              className="rounded-lg p-4 hover:bg-gray-100"
+              className="rounded-md p-4 hover:cursor-pointer hover:bg-gray-100"
             >
               <MenuIcon className="h-5 w-5 text-gray-600" />
             </button>
