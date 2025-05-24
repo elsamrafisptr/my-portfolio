@@ -24,7 +24,9 @@ const ServiceCard = (
         <canvas className="aspect-video w-full rounded-sm bg-gray-200"></canvas>
       )}
       <div className="flex flex-col gap-0.5">
-        <h1 className="text-xs font-medium">{props.title}</h1>
+        <h1 className="text-sm leading-tight font-semibold text-gray-800">
+          {props.title}
+        </h1>
         <p className="text-xs text-gray-600">{props.desc}</p>
       </div>
     </article>

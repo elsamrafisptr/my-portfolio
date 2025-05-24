@@ -45,7 +45,7 @@ const NavItem = ({ href, Icon, label, isActive }: MenuItemProps) => (
     aria-label={label}
     aria-current={isActive ? 'page' : undefined}
     className={cn(
-      'group flex items-center justify-center rounded-lg p-4 transition-colors duration-150 hover:bg-gray-100',
+      'group flex items-center justify-center rounded-md p-4 transition-colors duration-150 hover:bg-gray-100',
       isActive ? 'text-gray-800' : 'text-gray-400'
     )}
   >
@@ -135,7 +135,7 @@ const MenuBar = () => {
               <MenuIcon className="h-5 w-5 text-gray-600" />
             </button>
           ) : (
-            <div className="flex space-x-2">
+            <div className="flex space-x-1">
               {MENU_ITEMS.map(({ href, Icon, label }) => (
                 <NavItem
                   key={href}

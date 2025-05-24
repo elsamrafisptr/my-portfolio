@@ -1,7 +1,6 @@
 import Link from 'next/link'
 
 import { ArrowUpRightIcon, CircleIcon } from 'lucide-react'
-import React from 'react'
 
 const SectionNavigation = (props: Readonly<{ title: string; href?: string }>) => {
   return (
