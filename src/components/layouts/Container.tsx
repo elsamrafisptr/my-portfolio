@@ -7,7 +7,7 @@ const Container = (props: Readonly<{ children: ReactNode; className?: string }>)
   return (
     <div
       className={cn(
-        'flex flex-col gap-12 rounded-lg border border-gray-200 bg-white p-6',
+        'flex h-full flex-col gap-12 rounded-lg border border-gray-200 bg-white p-6',
         props.className
       )}
     >

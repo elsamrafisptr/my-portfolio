@@ -1,3 +1,5 @@
+import Container from '@/components/layouts/Container'
+
 import Achievements from './sections/Achievements'
 import EducationExperiences from './sections/EducationExperiences'
 import Headline from './sections/Headline'
@@ -6,15 +8,17 @@ import Skills from './sections/Skills'
 import WorkExperiences from './sections/WorkExperiences'
 
 const AboutPage = () => {
+  // const isActive: Readonly<boolean> = false
+
   return (
-    <div className="flex flex-col">
+    <Container>
       <Headline />
       <WorkExperiences />
       <OrgExperiences />
       <EducationExperiences />
       <Achievements />
       <Skills />
-    </div>
+    </Container>
   )
 }
 
