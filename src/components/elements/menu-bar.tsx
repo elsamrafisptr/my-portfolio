@@ -122,7 +122,7 @@ const MenuBar = () => {
   if (!mounted) return <LoadingPage />
 
   return (
-    <header className="fixed bottom-0 z-50 flex w-full items-center justify-center p-2 md:p-6">
+    <header className="fixed bottom-0 z-50 flex w-full items-center justify-center bg-gradient-to-t from-gray-50 p-2 md:p-6">
       <nav className="flex w-full items-center justify-between rounded-lg border bg-white p-1 md:w-[504px]">
         <div className="flex items-center gap-1">
           {isMobile ? (

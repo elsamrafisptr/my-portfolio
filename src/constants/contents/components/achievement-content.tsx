@@ -32,7 +32,7 @@ export const AchievementsContent: ReadonlyArray<AchievementsContentProps> = [
     milestones: []
   },
   {
-    title: 'Telkom University Endowment Fund Scholarship 2024',
+    title: 'Telkom University Endowment Fund Scholarship',
     achievement_producer: 'Telkom University',
     producer_contacts: ['https://kaptnn.com'],
     credentials_id: 'Credentials',

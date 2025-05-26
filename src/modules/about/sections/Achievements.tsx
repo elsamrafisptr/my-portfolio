@@ -1,21 +1,25 @@
 import SectionNavigation from '@/components/elements/SectionNavigation'
+import AchievementCard from '@/components/elements/achievement-card'
 import { AboutMeContent } from '@/constants/contents'
 
 const Achievements = () => {
   return (
     <div className="flex flex-col gap-4">
       <SectionNavigation title="Achievements" />
-      <div className="flex flex-col gap-2">
-        {AboutMeContent.achievements.map(value => {
+      <div className="flex flex-col gap-6">
+        {AboutMeContent.achievements.map((value, index) => {
           return (
-            <article
-              key={(value.title + value.achievement_producer)
-                .replace(' ', '')
-                .toLowerCase()}
-            >
-              <h1>{value.title}</h1>
-              <p>{value.achievement_producer}</p>
-            </article>
+            <AchievementCard
+              key={index}
+              title={value.title}
+              description={value.description}
+              achievement_producer={value.achievement_producer}
+              producer_contacts={value.producer_contacts}
+              credentials_id={value.credentials_id}
+              credentials_url={value.credentials_url}
+              credentials_year_publish={value.credentials_year_publish}
+              milestones={value.milestones}
+            />
           )
         })}
       </div>

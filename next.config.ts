@@ -13,6 +13,11 @@ const baseConfig: NextConfig = {
         protocol: 'https',
         hostname: 'ik.imagekit.io',
         port: ''
+      },
+      {
+        protocol: 'https',
+        hostname: 'skillicons.dev',
+        port: ''
       }
     ],
     unoptimized: true

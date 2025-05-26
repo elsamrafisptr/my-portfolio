@@ -119,7 +119,7 @@ export const WorksContent: ReadonlyArray<WorksContentProps> = [
     end_date: 'Jul 2024'
   },
   {
-    title: 'Programming Algorithm Practicum Assistant',
+    title: 'Algorithm Practicum Assistant',
     type: 'Part Time',
     work_type: 'On-Site',
     company_name: 'Informatics Laboratory Telkom University',
