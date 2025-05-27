@@ -1,56 +1,101 @@
+import Image from 'next/image'
+
 import SectionNavigation from '@/components/elements/SectionNavigation'
 
 const Skills = () => {
   return (
     <div className="flex flex-col gap-4">
       <SectionNavigation title="Skills" />
-      {/* <div className="flex flex-col gap-6">
-        <div className="flex flex-col gap-2 w-full">
+      <div className="flex flex-col gap-6">
+        <div className="flex w-full flex-col gap-2">
           <h1>Frameworks & Libraries</h1>
-          <Image
-            src="https://skillicons.dev/icons?i=nextjs,react,vue,fastapi,express,nest,laravel,flask"
-            alt=""
-            width={480}
-            height={240}
-          />
+          <div className="flex flex-wrap items-center gap-1">
+            {[
+              'nextjs',
+              'react',
+              'vue',
+              'fastapi',
+              'express',
+              'nest',
+              'laravel',
+              'flask',
+              'flutter'
+            ].map((value, index) => {
+              return (
+                <Image
+                  key={index}
+                  src={`https://skillicons.dev/icons?i=${value}`}
+                  alt={'frameworks & libraries: ' + value}
+                  width={48}
+                  height={48}
+                />
+              )
+            })}
+          </div>
         </div>
-        <div className="flex flex-col gap-2 w-full">
+        <div className="flex w-full flex-col gap-2">
           <h1>Programming Languages</h1>
-          <Image
-            src="https://skillicons.dev/icons?i=javascript,typescript,python,golang,php"
-            alt=""
-            width={144}
-            height={144}
-          />
+          <div className="flex flex-wrap items-center gap-1">
+            {['javascript', 'typescript', 'python', 'golang', 'php'].map(
+              (value, index) => {
+                return (
+                  <Image
+                    key={index}
+                    src={`https://skillicons.dev/icons?i=${value}`}
+                    alt={'programming languages: ' + value}
+                    width={48}
+                    height={48}
+                  />
+                )
+              }
+            )}
+          </div>
         </div>
-        <div className="flex flex-col gap-2 w-full">
+        <div className="flex w-full flex-col gap-2">
           <h1>Databases</h1>
-          <Image
-            src="https://skillicons.dev/icons?i=postgresql,mysql,mongodb,firebase"
-            alt=""
-            width={144}
-            height={144}
-          />
-        </div>
-        <div className="flex flex-col gap-2 w-full">
-          <h1>Providers & Tools</h1>
-          <Image
-            src="https://skillicons.dev/icons?i=gcp,azure,aws,cloudflare,supabase,docker,githubactions,figma,wordpress"
-            alt=""
-            width={144}
-            height={144}
-          />
+          <div className="flex flex-wrap items-center gap-1">
+            {['postgresql', 'mysql', 'mongodb', 'firebase'].map((value, index) => {
+              return (
+                <Image
+                  key={index}
+                  src={`https://skillicons.dev/icons?i=${value}`}
+                  alt={'programming languages: ' + value}
+                  width={48}
+                  height={48}
+                />
+              )
+            })}
+          </div>
         </div>
         <div className="flex flex-col gap-2">
           <h1>Others</h1>
-          <Image
-            src="https://skillicons.dev/icons?i=nextjs,react,vue"
-            alt=""
-            width={144}
-            height={144}
-          />
+          <div className="flex flex-wrap items-center gap-1">
+            {[
+              'gcp',
+              'azure',
+              'aws',
+              'cloudflare',
+              'supabase',
+              'docker',
+              'githubactions',
+              'github',
+              'figma',
+              'wordpress',
+              'postman'
+            ].map((value, index) => {
+              return (
+                <Image
+                  key={index}
+                  src={`https://skillicons.dev/icons?i=${value}`}
+                  alt={'programming languages: ' + value}
+                  width={48}
+                  height={48}
+                />
+              )
+            })}
+          </div>
         </div>
-      </div> */}
+      </div>
     </div>
   )
 }

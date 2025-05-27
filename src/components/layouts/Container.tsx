@@ -14,7 +14,7 @@ const Container = (props: Readonly<{ children: ReactNode; className?: string }>)
       <ScrollProgress />
       {props.children}
       <div className="flex w-full items-center justify-center">
-        <p className="text-xs text-gray-400">The End of the Page</p>
+        <p className="text-xs text-gray-400">Thanks for scrolling ✌️</p>
       </div>
     </div>
   )

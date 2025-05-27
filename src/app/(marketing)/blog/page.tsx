@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 }
 
 const Blog = () => {
-  const isMaintained: boolean = false
+  const isMaintained: boolean = true
 
   if (isMaintained) return <MaintenancePage />
 
