@@ -1,14 +1,16 @@
+import Container from '@/components/layouts/Container'
+
 import AllProjects from './sections/AllProjects'
-import Filters from './sections/Filters'
 import Headline from './sections/Headline'
 
 const ProjectsPage = () => {
+  // const isActive: Readonly<boolean> = false
+
   return (
-    <div className="flex flex-col">
+    <Container>
       <Headline />
-      <Filters />
       <AllProjects />
-    </div>
+    </Container>
   )
 }
 
