@@ -1,13 +1,13 @@
 echo '🏗️👷 Styling, testing and building your project before committing'
 
-npm run lint:fix
+bun run lint:fix
 
-npm run format
+bun run format
 
-npm run lint
+bun run lint
 
-npm run format:check
+bun run format:check
 
-npm run build
+bun run build
 
 echo '✅✅✅✅ You win this time... I am committing this now. ✅✅✅✅'
