@@ -1,7 +1,7 @@
 name: publish-to-github-pages
 on:
   push:
-    branches: 
+    branches:
       - main
 
   workflow_dispatch:

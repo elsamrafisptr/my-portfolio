@@ -7,7 +7,7 @@ runs:
       uses: oven-sh/setup-bun@v2
       with:
         bun-version: latest
-    
+
     - name: Cache Bun dependencies ⚡
       id: cache_dependencies
       uses: actions/cache@v3
