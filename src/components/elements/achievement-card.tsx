@@ -1,7 +1,8 @@
-import Image from 'next/image'
 import Link from 'next/link'
 
 import { AchievementsContentProps } from '@/constants/contents/components/achievement-content'
+
+import Image from './image-wrapper'
 
 const AchievementCard = (item: AchievementsContentProps) => {
   return (

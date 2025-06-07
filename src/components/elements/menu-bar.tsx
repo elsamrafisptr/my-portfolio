@@ -7,21 +7,23 @@ import { useScreenSize } from '@/hooks'
 import { cn } from '@/lib/utils'
 import {
   BriefcaseBusinessIcon,
-  DownloadIcon,
   HomeIcon,
   LayoutDashboardIcon,
+  LucideIcon,
   MenuIcon,
-  Moon,
   NotebookTabsIcon,
   PencilIcon,
-  Sun,
   UserRoundCheckIcon
 } from 'lucide-react'
 import { AnimatePresence, motion } from 'motion/react'
 import { useTheme } from 'next-themes'
-import { memo, useCallback, useEffect, useState } from 'react'
+import { Suspense, memo, useCallback, useEffect, useState } from 'react'
 
 import LoadingPage from '../layouts/LoadingPage'
+import DownloadButton from './download-button'
+import ThemeToggle from './theme-toggle'
+
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
 const MENU_ITEMS = [
   { href: '/', Icon: HomeIcon, label: 'Home' },
@@ -31,6 +33,45 @@ const MENU_ITEMS = [
   { href: '/contact', Icon: NotebookTabsIcon, label: 'Contact' },
   { href: '/dashboard', Icon: LayoutDashboardIcon, label: 'Dashboard' }
 ]
+
+const MenuBarSkeleton = () => (
+  <header className="fixed bottom-0 z-50 flex w-full items-center justify-center bg-gradient-to-t from-gray-50 p-2 md:p-6">
+    <nav className="flex w-full items-center justify-between rounded-lg border bg-white p-1 md:w-[504px]">
+      <div className="flex items-center gap-1">
+        <div className="h-12 w-12 animate-pulse rounded-md bg-gray-200" />
+      </div>
+      <div className="flex items-center gap-1">
+        <div className="h-12 w-12 animate-pulse rounded-md bg-gray-200" />
+        <div className="h-12 w-12 animate-pulse rounded-md bg-gray-800" />
+      </div>
+    </nav>
+  </header>
+)
+
+export interface MenuItem {
+  href: string
+  Icon: LucideIcon
+  label: string
+  badge?: string | number
+  disabled?: boolean
+  external?: boolean
+  onClick?: () => void | Promise<void>
+}
+
+export interface MenuBarConfig {
+  items: MenuItem[]
+  showThemeToggle?: boolean
+  showDownloadButton?: boolean
+  downloadAction?: () => void | Promise<void>
+  position?: 'bottom' | 'top'
+  variant?: 'default' | 'minimal' | 'floating'
+}
+
+export interface MenuBarProps {
+  config?: Partial<MenuBarConfig>
+  className?: string
+  onNavigate?: (href: string) => void
+}
 
 type MenuItemProps = {
   href: string
@@ -58,50 +99,62 @@ const NavItem = ({ href, Icon, label, isActive }: MenuItemProps) => (
   </Link>
 )
 
-const MobileMenu = () => {
+const MobileMenu = ({ onClose }: { onClose: () => void }) => {
   const pathname = usePathname()
 
   return (
-    <motion.div
-      initial={{ y: 100, opacity: 0, scale: 0.5 }}
-      animate={{ y: 0, opacity: 1, scale: 1 }}
-      exit={{ y: 100, opacity: 0, scale: 0 }}
-      transition={{ bounceStiffness: 0, duration: 0.3, easings: ['easeIn'] }}
-      className="absolute bottom-[72px] left-0 flex w-full justify-around p-2"
-      role="menu"
-    >
-      <div className="grid w-full grid-cols-3 items-center justify-center gap-4 rounded-lg border bg-white p-6 dark:bg-white">
-        {MENU_ITEMS.map(({ href, Icon, label }) => {
-          const isActive = pathname === href
-          return (
-            <Link
-              key={href}
-              href={href}
-              className="group flex aspect-video flex-col items-center justify-center gap-1 rounded-lg transition-colors duration-150 hover:cursor-pointer hover:bg-gray-100"
-            >
-              <Icon
-                className={cn(
-                  'size-5 transition-colors duration-150 group-hover:text-gray-800',
-                  isActive ? 'text-gray-800' : 'text-gray-400'
-                )}
-              />
-              <p
-                className={cn(
-                  'text-xs font-medium transition-colors duration-150 group-hover:text-gray-800',
-                  isActive ? 'text-gray-800' : 'text-gray-400'
-                )}
+    <>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.2 }}
+        className="fixed inset-0 -z-10 bg-black/10 backdrop-blur-xs"
+        onClick={onClose}
+        aria-hidden="true"
+      />
+
+      <motion.div
+        initial={{ y: 100, opacity: 0, scale: 0.5 }}
+        animate={{ y: 0, opacity: 1, scale: 1 }}
+        exit={{ y: 100, opacity: 0, scale: 0 }}
+        transition={{ bounceStiffness: 0, duration: 0.3, easings: ['easeIn'] }}
+        className="absolute bottom-[72px] left-0 flex w-full justify-around p-2"
+        role="menu"
+      >
+        <div className="grid w-full grid-cols-3 items-center justify-center gap-4 rounded-lg border bg-white p-6 dark:bg-white">
+          {MENU_ITEMS.map(({ href, Icon, label }) => {
+            const isActive = pathname === href
+            return (
+              <Link
+                key={href}
+                href={href}
+                className="group flex aspect-video flex-col items-center justify-center gap-1 rounded-lg transition-colors duration-150 hover:cursor-pointer hover:bg-gray-100"
               >
-                {label}
-              </p>
-            </Link>
-          )
-        })}
-      </div>
-    </motion.div>
+                <Icon
+                  className={cn(
+                    'size-5 transition-colors duration-150 group-hover:text-gray-800',
+                    isActive ? 'text-gray-800' : 'text-gray-400'
+                  )}
+                />
+                <p
+                  className={cn(
+                    'text-xs font-medium transition-colors duration-150 group-hover:text-gray-800',
+                    isActive ? 'text-gray-800' : 'text-gray-400'
+                  )}
+                >
+                  {label}
+                </p>
+              </Link>
+            )
+          })}
+        </div>
+      </motion.div>
+    </>
   )
 }
 
-const MenuBar = () => {
+const PureMenuBar = () => {
   const pathname = usePathname()
   const { isMobile } = useScreenSize()
   const { setTheme, resolvedTheme } = useTheme()
@@ -118,6 +171,10 @@ const MenuBar = () => {
   const toggleMenu = useCallback(() => {
     setMenuOpen(open => !open)
   }, [])
+
+  const downloadAction = () => {
+    console.log('Download')
+  }
 
   if (!mounted) return <LoadingPage />
 
@@ -148,48 +205,31 @@ const MenuBar = () => {
             </div>
           )}
         </div>
+
         <div className="flex items-center gap-1">
-          <button
-            onClick={toggleTheme}
-            aria-label="Toggle Theme"
-            className="group flex items-center justify-center rounded-md p-4 transition-colors duration-150 hover:bg-gray-100"
-          >
-            {isDark ? (
-              <Moon
-                className={cn(
-                  'size-5 transition-colors duration-100 group-hover:text-gray-800',
-                  'text-gray-400'
-                )}
-              />
-            ) : (
-              <Sun
-                className={cn(
-                  'size-5 transition-colors duration-100 group-hover:text-gray-800',
-                  'text-gray-400'
-                )}
-              />
-            )}
-          </button>
-          <button
-            onClick={() => console.log('Download action')}
-            aria-label="Download Resume"
-            className="group flex items-center justify-center rounded-md bg-gray-800 p-4 transition-colors duration-150 hover:opacity-90"
-          >
-            <DownloadIcon
-              className={cn('size-5 text-white transition-colors duration-100')}
-            />
-          </button>
+          <ThemeToggle isDark={isDark} onToggle={toggleTheme} />
+          <DownloadButton onDownload={downloadAction} />
         </div>
 
         {/* Mobile menu list */}
         {isMobile && menuOpen && (
           <AnimatePresence>
-            <MobileMenu />
+            <MobileMenu onClose={toggleMenu} />
           </AnimatePresence>
         )}
       </nav>
     </header>
   )
 }
+
+const MenuBar = memo((props: any) => {
+  return (
+    <Suspense fallback={<MenuBarSkeleton />}>
+      <PureMenuBar {...props} />
+    </Suspense>
+  )
+})
+
+MenuBar.displayName = 'MenuBar'
 
 export default memo(MenuBar)

@@ -1,5 +1,19 @@
 @import 'tailwindcss';
 
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ff0000;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @layer base {

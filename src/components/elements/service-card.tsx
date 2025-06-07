@@ -1,6 +1,6 @@
-import Image from 'next/image'
-
 import { cn } from '@/lib/utils'
+
+import Image from './image-wrapper'
 
 const ServiceCard = (
   props: Readonly<{ img: string; title: string; desc: string; className?: string }>

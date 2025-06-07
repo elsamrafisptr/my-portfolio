@@ -1,30 +1,33 @@
 import { useEffect, useState } from 'react'
 
-type ScreenSize = {
+interface ScreenSize {
   width: number
   height: number
-}
-
-const useScreenSize = (): {
-  screenSize: ScreenSize
   isMobile: boolean
   isTablet: boolean
   isDesktop: boolean
-} => {
+}
+
+const useScreenSize = (): ScreenSize => {
   const [screenSize, setScreenSize] = useState<ScreenSize>({
     width: 0,
-    height: 0
+    height: 0,
+    isMobile: false,
+    isTablet: false,
+    isDesktop: false
   })
-
-  const isMobile = screenSize.width > 0 && screenSize.width <= 768
-  const isTablet = screenSize.width > 768 && screenSize.width <= 1024
-  const isDesktop = screenSize.width > 1024
 
   useEffect(() => {
     const updateScreenSize = () => {
+      const width = window.innerWidth
+      const height = window.innerHeight
+
       setScreenSize({
-        width: window.innerWidth,
-        height: window.innerHeight
+        width,
+        height,
+        isMobile: width < 768,
+        isTablet: width >= 768 && width < 1024,
+        isDesktop: width >= 1024
       })
     }
 
@@ -37,7 +40,7 @@ const useScreenSize = (): {
     }
   }, [])
 
-  return { screenSize, isMobile, isTablet, isDesktop }
+  return screenSize
 }
 
 export default useScreenSize

@@ -16,6 +16,7 @@
     "types:check": "tsc --noEmit --pretty",
     "test": "jest --watch",
     "test:coverage": "jest --coverage --verbose",
+    "pre-commit": "sh ./.husky/pre-commit",
     "prepare": "husky"
   },
   "dependencies": {

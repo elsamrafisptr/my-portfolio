@@ -1,7 +1,8 @@
-import Image from 'next/image'
 import Link from 'next/link'
 
 import { OrgsContentProps } from '@/constants/contents/components/org-content'
+
+import Image from './image-wrapper'
 
 const OrgExpCard = (item: OrgsContentProps) => {
   return (

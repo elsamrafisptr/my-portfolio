@@ -1,7 +1,8 @@
-import Image from 'next/image'
 import Link from 'next/link'
 
 import { WorksContentProps } from '@/constants/contents/components/works-content'
+
+import Image from './image-wrapper'
 
 const WorkExpCard = (item: WorksContentProps) => {
   return (

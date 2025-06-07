@@ -1,6 +1,7 @@
 import { cn } from '@/lib/utils'
 import { ReactNode } from 'react'
 
+import BackToTop from '../elements/back-to-top'
 import { ScrollProgress } from '../ui/scroll-progress'
 
 const Container = (props: Readonly<{ children: ReactNode; className?: string }>) => {
@@ -13,8 +14,9 @@ const Container = (props: Readonly<{ children: ReactNode; className?: string }>)
     >
       <ScrollProgress />
       {props.children}
-      <div className="flex w-full items-center justify-center">
+      <div className="flex w-full flex-col items-center justify-center gap-2">
         <p className="text-xs text-gray-400">Thanks for scrolling ✌️</p>
+        <BackToTop />
       </div>
     </div>
   )

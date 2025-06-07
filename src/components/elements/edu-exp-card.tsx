@@ -1,7 +1,8 @@
-import Image from 'next/image'
 import Link from 'next/link'
 
 import { EducationsContentProps } from '@/constants/contents/components/education-content'
+
+import Image from './image-wrapper'
 
 const EduExpCard = (item: EducationsContentProps) => {
   return (

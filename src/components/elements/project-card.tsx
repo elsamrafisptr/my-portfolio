@@ -22,6 +22,8 @@ const ProjectCard = ({ title, desc, date, imageUrl }: ProjectCardProps) => {
           loading="lazy"
           className="aspect-video rounded bg-gray-200 object-cover"
           priority={false}
+          animationPreset="smooth"
+          hoverEffect="none"
         />
       </CardContent>
       <CardHeader className="mt-2 p-0">
