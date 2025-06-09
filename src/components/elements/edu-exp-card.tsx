@@ -7,9 +7,7 @@ import Image from './image-wrapper'
 const EduExpCard = (item: EducationsContentProps) => {
   return (
     <Link
-      href={`/about/orgs/${item.education_name.replaceAll(' ', '-').toLowerCase()}-${item.title
-        .replaceAll(' ', '-')
-        .toLowerCase()}`}
+      href={''}
       className="relative -m-2 rounded-lg border border-gray-300/0 p-2 duration-100 hover:border-gray-300/50 hover:bg-gray-100/50"
     >
       <article className="flex w-full flex-auto items-start gap-2">

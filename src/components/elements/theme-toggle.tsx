@@ -17,9 +17,10 @@ const ThemeToggle = memo(({ isDark, onToggle, className }: ThemeToggleProps) => 
       onClick={onToggle}
       aria-label={`Switch to ${isDark ? 'light' : 'dark'} theme`}
       className={cn(
-        'group flex items-center justify-center rounded-md p-4 transition-all duration-200 hover:bg-gray-100 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:outline-none dark:hover:bg-gray-800',
+        'group flex items-center justify-center rounded-md p-4 transition-all duration-200 hover:cursor-not-allowed hover:bg-gray-100 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:outline-none dark:hover:bg-gray-800',
         className
       )}
+      disabled={true}
     >
       <motion.div
         key={isDark ? 'dark' : 'light'}

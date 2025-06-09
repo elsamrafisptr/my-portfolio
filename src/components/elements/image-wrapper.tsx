@@ -156,10 +156,8 @@ const Image = forwardRef<HTMLDivElement, ExtendedImageProps>(
     const imageRef = useRef<HTMLImageElement>(null)
     const progressInterval = useRef<NodeJS.Timeout>(null)
 
-    // Get animation classes
     const animation = customAnimation || ANIMATION_PRESETS[animationPreset]
 
-    // Hover effect classes
     const hoverEffects = {
       zoom: 'hover:scale-105',
       lift: 'hover:scale-105 hover:shadow-xl hover:-translate-y-1',
@@ -167,7 +165,6 @@ const Image = forwardRef<HTMLDivElement, ExtendedImageProps>(
       none: ''
     }
 
-    // Simulate loading progress for better UX
     useEffect(() => {
       if (loadingState === 'loading' && showLoadingProgress) {
         progressInterval.current = setInterval(() => {
@@ -225,12 +222,10 @@ const Image = forwardRef<HTMLDivElement, ExtendedImageProps>(
       onLoadStart?.()
     }, [onLoadStart])
 
-    // Validate src prop for security
     const isValidSrc = useCallback((srcValue: string | object) => {
       if (typeof srcValue === 'object') return true // Static imports are safe
       if (typeof srcValue !== 'string') return false
 
-      // Basic URL validation to prevent XSS
       try {
         if (srcValue.startsWith('data:')) {
           return srcValue.startsWith('data:image/')
@@ -279,12 +274,10 @@ const Image = forwardRef<HTMLDivElement, ExtendedImageProps>(
         role="img"
         aria-label={loadingState === 'loading' ? loadingLabel : alt}
       >
-        {/* Overlay */}
         {overlay && (
           <div className={cn('pointer-events-none absolute inset-0 z-10', overlay)} />
         )}
 
-        {/* Loading skeleton */}
         {loadingState === 'loading' && (
           <>
             <Skeleton {...skeletonProps} />
@@ -292,7 +285,6 @@ const Image = forwardRef<HTMLDivElement, ExtendedImageProps>(
           </>
         )}
 
-        {/* Error state */}
         {loadingState === 'error' && (
           <div className="absolute inset-0 flex items-center justify-center bg-gray-100 dark:bg-gray-800">
             {showRetry ? (
@@ -316,7 +308,6 @@ const Image = forwardRef<HTMLDivElement, ExtendedImageProps>(
           </div>
         )}
 
-        {/* Main image */}
         <NextImage
           ref={imageRef}
           className={cn(
@@ -325,7 +316,7 @@ const Image = forwardRef<HTMLDivElement, ExtendedImageProps>(
             loadingState === 'loading' ? animation.loading : animation.loaded,
             rounded
           )}
-          src={currentSrc}
+          src={currentSrc as string}
           alt={alt}
           loading={eager || priority ? 'eager' : 'lazy'}
           priority={priority}

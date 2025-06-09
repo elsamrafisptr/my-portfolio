@@ -18,6 +18,7 @@ const WorkExperiences = () => {
               company_contacts={item.company_contacts}
               type={item.type}
               milestones={item.milestones}
+              images={item.images}
               work_type={item.work_type}
               start_date={item.start_date}
               end_date={item.end_date}

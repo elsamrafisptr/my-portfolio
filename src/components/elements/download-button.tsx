@@ -34,10 +34,11 @@ const DownloadButton = memo(
     return (
       <button
         onClick={handleDownload}
-        disabled={isDownloading}
+        // disabled={isDownloading}
+        disabled={true}
         aria-label={label}
         className={cn(
-          'group flex items-center justify-center rounded-md bg-gray-800 p-4 transition-all duration-200 hover:bg-gray-700 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:outline-none disabled:opacity-70 dark:bg-gray-700 dark:hover:bg-gray-600',
+          'group flex items-center justify-center rounded-md bg-gray-800 p-4 transition-all duration-200 hover:cursor-not-allowed hover:bg-gray-700 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:outline-none disabled:opacity-70 dark:bg-gray-700 dark:hover:bg-gray-600',
           {
             'bg-green-600 hover:bg-green-600': isSuccess
           },

@@ -1,5 +1,7 @@
 import Link from 'next/link'
 
+import { urlEndpoint } from '@/constants/contents'
+
 import { WorksContentProps } from '@/constants/contents/components/works-content'
 
 import Image from './image-wrapper'
@@ -13,13 +15,13 @@ const WorkExpCard = (item: WorksContentProps) => {
       className="relative -m-2 rounded-lg border border-gray-300/0 p-2 duration-100 hover:border-gray-300/50 hover:bg-gray-100/50"
     >
       <article className="flex w-full flex-auto items-start gap-2">
-        {false ? (
+        {item.images[0] ? (
           <Image
-            src={'/globe.svg'}
+            src={urlEndpoint + item.images[0]}
             alt=""
             width={1024}
             height={1024}
-            className="aspect-square h-12 w-12 rounded-lg border"
+            className="aspect-square h-12 w-12 rounded-lg border shadow-md shadow-gray-100"
           />
         ) : (
           <canvas className="aspect-square h-12 w-12 rounded-lg border bg-gray-200 shadow-md shadow-gray-100"></canvas>

@@ -4,6 +4,7 @@
     "": {
       "name": "elsamrafisptr.github.io",
       "dependencies": {
+        "@imagekit/next": "^2.1.2",
         "@radix-ui/react-avatar": "^1.1.10",
         "@radix-ui/react-separator": "^1.1.1",
         "@radix-ui/react-slot": "^1.2.3",
@@ -18,7 +19,7 @@
         "next-themes": "^0.4.6",
         "react": "^19.0.0",
         "react-dom": "^19.0.0",
-        "tailwindcss-animate": "^1.0.7"
+        "tailwindcss-animate": "^1.0.7",
       },
       "devDependencies": {
         "@commitlint/cli": "^19.8.1",
@@ -49,9 +50,9 @@
         "tailwind-merge": "^3.3.0",
         "tailwindcss": "^4.1.7",
         "tw-animate-css": "^1.3.0",
-        "typescript": "^5"
-      }
-    }
+        "typescript": "^5",
+      },
+    },
   },
   "packages": {
     "@alloc/quick-lru": ["@alloc/quick-lru@5.2.0", "", {}, "sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw=="],
@@ -161,6 +162,10 @@
     "@humanwhocodes/module-importer": ["@humanwhocodes/module-importer@1.0.1", "", {}, "sha512-bxveV4V8v5Yb4ncFTT3rPSgZBOpCkjfK0y4oVVVJwIuDVBRMDXrPyXRL988i5ap9m9bnyEEjWfm5WkBmtffLfA=="],
 
     "@humanwhocodes/retry": ["@humanwhocodes/retry@0.4.3", "", {}, "sha512-bV0Tgo9K4hfPCek+aMAn81RppFKv2ySDQeMoSZuvTASywNTnVJCArCZE2FWqpvIatKu7VMRLWlR1EazvVhDyhQ=="],
+
+    "@imagekit/javascript": ["@imagekit/javascript@5.1.0", "", {}, "sha512-P12NaxlO6Qu4GROFagX9qgP5kKde236mCu5jJB1cWJ6mPaVdjyk0Mw3ciGIWdKXST/jP1cFqS2ZoBVRSq1SWow=="],
+
+    "@imagekit/next": ["@imagekit/next@2.1.2", "", { "dependencies": { "@imagekit/javascript": "^5.1.0" }, "peerDependencies": { "next": ">= 13" } }, "sha512-JzUdBoWKvGqsVjM/b5B7whhsKHyUQG9Hh7/bGKDK2tCOvVtwmXa9ohMUfnGuTqBPKbl16vpDXVXKoMin4jq8rQ=="],
 
     "@img/sharp-darwin-arm64": ["@img/sharp-darwin-arm64@0.34.2", "", { "optionalDependencies": { "@img/sharp-libvips-darwin-arm64": "1.1.0" }, "os": "darwin", "cpu": "arm64" }, "sha512-OfXHZPppddivUJnqyKoi5YVeHRkkNE2zUFT2gbpKxp/JZCFYEYubnMg+gOp6lWfasPrTS+KPosKqdI+ELYVDtg=="],
 
@@ -1382,6 +1387,6 @@
 
     "cz-conventional-changelog/chalk/ansi-styles/color-convert/color-name": ["color-name@1.1.3", "", {}, "sha512-72fSenhMw2HZMTVHeCA9KCmpEIbzWiQsjN+BHcBbS9vr1mtt+vJjPdksIBNUmKAW8TFUDPJK5SUU3QhE9NEXDw=="],
 
-    "@commitlint/top-level/find-up/locate-path/p-locate/p-limit/yocto-queue": ["yocto-queue@1.2.1", "", {}, "sha512-AyeEbWOu/TAXdxlV9wmGcR0+yh2j3vYPGOECcIj2S7MkrLyC7ne+oye2BKTItt0ii2PHk4cDy+95+LshzbXnGg=="]
+    "@commitlint/top-level/find-up/locate-path/p-locate/p-limit/yocto-queue": ["yocto-queue@1.2.1", "", {}, "sha512-AyeEbWOu/TAXdxlV9wmGcR0+yh2j3vYPGOECcIj2S7MkrLyC7ne+oye2BKTItt0ii2PHk4cDy+95+LshzbXnGg=="],
   }
 }

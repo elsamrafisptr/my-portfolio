@@ -1,6 +1,5 @@
-import Image from 'next/image'
-
 import SectionNavigation from '@/components/elements/SectionNavigation'
+import SkillCard from '@/components/elements/skill-card'
 
 const Skills = () => {
   return (
@@ -22,12 +21,13 @@ const Skills = () => {
               'flutter'
             ].map((value, index) => {
               return (
-                <Image
+                <SkillCard
                   key={index}
-                  src={`https://skillicons.dev/icons?i=${value}`}
-                  alt={'frameworks & libraries: ' + value}
-                  width={48}
-                  height={48}
+                  alt="framework & libraries"
+                  value={value}
+                  isFavorite={['nextjs', 'react', 'vue', 'fastapi', 'express'].includes(
+                    value
+                  )}
                 />
               )
             })}
@@ -39,12 +39,16 @@ const Skills = () => {
             {['javascript', 'typescript', 'python', 'golang', 'php'].map(
               (value, index) => {
                 return (
-                  <Image
+                  <SkillCard
                     key={index}
-                    src={`https://skillicons.dev/icons?i=${value}`}
-                    alt={'programming languages: ' + value}
-                    width={48}
-                    height={48}
+                    alt="framework & libraries"
+                    value={value}
+                    isFavorite={[
+                      'javascript',
+                      'typescript',
+                      'python',
+                      'golang'
+                    ].includes(value)}
                   />
                 )
               }
@@ -56,12 +60,11 @@ const Skills = () => {
           <div className="flex flex-wrap items-center gap-1">
             {['postgresql', 'mysql', 'mongodb', 'firebase'].map((value, index) => {
               return (
-                <Image
+                <SkillCard
                   key={index}
-                  src={`https://skillicons.dev/icons?i=${value}`}
-                  alt={'programming languages: ' + value}
-                  width={48}
-                  height={48}
+                  alt="framework & libraries"
+                  value={value}
+                  isFavorite={['postgresql', 'mysql'].includes(value)}
                 />
               )
             })}
@@ -84,12 +87,19 @@ const Skills = () => {
               'postman'
             ].map((value, index) => {
               return (
-                <Image
+                <SkillCard
                   key={index}
-                  src={`https://skillicons.dev/icons?i=${value}`}
-                  alt={'programming languages: ' + value}
-                  width={48}
-                  height={48}
+                  alt="framework & libraries"
+                  value={value}
+                  isFavorite={[
+                    'gcp',
+                    'docker',
+                    'githubactions',
+                    'github',
+                    'figma',
+                    'wordpress',
+                    'postman'
+                  ].includes(value)}
                 />
               )
             })}

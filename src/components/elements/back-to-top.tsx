@@ -77,17 +77,17 @@ const BackToTop = memo((props: BackToTopProps) => {
       onClick={scrollToTop}
       onKeyDown={handleKeyDown}
       className={cn(
-        'group flex w-fit items-center justify-center gap-1 transition-colors duration-300 hover:cursor-pointer',
+        'group flex w-fit items-center justify-center gap-1 border-b border-gray-400 transition-colors duration-300 hover:cursor-pointer hover:border-gray-600',
         className
       )}
       aria-label="Back to the top"
       title="Back to the top"
       type="button"
     >
-      <span className="text-xs text-gray-400 group-hover:text-gray-600">
+      <span className="text-xs text-gray-400 transition-colors duration-300 group-hover:text-gray-600">
         Back to the top
       </span>
-      <ArrowUpIcon className="h-3 w-3 text-gray-400 group-hover:text-gray-600" />
+      <ArrowUpIcon className="h-3 w-3 text-gray-400 transition-colors duration-300 group-hover:text-gray-600" />
     </button>
   )
 })

@@ -32,7 +32,7 @@ const baseConfig: NextConfig = {
     optimizeCss: false,
     optimisticClientCache: true,
     optimizeServerReact: true,
-    optimizePackageImports: [],
+    optimizePackageImports: ['@imagekit/next', 'motion'],
     serverMinification: true
   }
 }

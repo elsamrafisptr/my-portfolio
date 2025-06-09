@@ -1,12 +1,13 @@
 export interface WorksContentProps {
   title: string
-  type: string
-  work_type: string
+  type: 'Contract' | 'Internship' | 'Full Time' | 'Freelance' | 'Part Time'
+  work_type: 'Remote' | 'On-Site' | 'Hybrid'
   company_name: string
   company_contacts: string[]
   company_location: string
   description: string
   milestones: string[]
+  images: string[]
   start_date: string
   end_date: string
 }
@@ -14,7 +15,7 @@ export interface WorksContentProps {
 export const WorksContent: ReadonlyArray<WorksContentProps> = [
   {
     title: 'Software Engineer',
-    type: 'Internship',
+    type: 'Contract',
     work_type: 'Remote',
     company_name: 'SCHNAP',
     company_contacts: ['https://schnap.com.au'],
@@ -27,6 +28,7 @@ export const WorksContent: ReadonlyArray<WorksContentProps> = [
       'Built automation tasks using Python and Make.com for decreasing and optimizing the current system in the company by integrating 3rd Party API, Data Scraping, and Webhooks.',
       'Monitor, test, and report everyday tasks of the website in the agile software development lifecycle and work remotely (WFA)'
     ],
+    images: ['/schnap_logo.webp'],
     start_date: 'Nov 2024',
     end_date: 'Present'
   },
@@ -45,6 +47,7 @@ export const WorksContent: ReadonlyArray<WorksContentProps> = [
       'Built automation tasks using Python and Make.com for decreasing and optimizing the current system in the company by integrating 3rd Party API, Data Scraping, and Webhooks.',
       'Monitor, test, and report everyday tasks of the website in the agile software development lifecycle and work remotely (WFA)'
     ],
+    images: [],
     start_date: 'Nov 2024',
     end_date: 'Present'
   },
@@ -62,6 +65,7 @@ export const WorksContent: ReadonlyArray<WorksContentProps> = [
       'Built and maintained approximately 25 website templates (not no-code templates).',
       'Completed 13 programming and design projects.'
     ],
+    images: ['/arnawa_logo.png'],
     start_date: 'Nov 2024',
     end_date: 'Present'
   },
@@ -79,6 +83,7 @@ export const WorksContent: ReadonlyArray<WorksContentProps> = [
       'Completed 25+ Google Cloud Skills Boost, Dicoding, and Coursera courses and gained proficiency in tools for deployment, security, and API hosting.',
       'Collaborated with a team as a backend and cloud environment developer to complete this app “StuntFree” within 1 month, showcasing leadership, teamwork, and technical expertise.'
     ],
+    images: [],
     start_date: 'Sep 2024',
     end_date: 'Jan 2025'
   },
@@ -91,6 +96,7 @@ export const WorksContent: ReadonlyArray<WorksContentProps> = [
     company_location: 'Malang, Indonesia',
     description: '',
     milestones: [],
+    images: ['/schooltech_logo.webp'],
     start_date: 'Aug 2024',
     end_date: 'Dec 2024'
   },
@@ -103,6 +109,7 @@ export const WorksContent: ReadonlyArray<WorksContentProps> = [
     company_location: 'Singapore',
     description: '',
     milestones: [],
+    images: [],
     start_date: 'Jun 2024',
     end_date: 'Aug 2024'
   },
@@ -115,6 +122,7 @@ export const WorksContent: ReadonlyArray<WorksContentProps> = [
     company_location: 'India',
     description: '',
     milestones: [],
+    images: [],
     start_date: 'Jun 2024',
     end_date: 'Jul 2024'
   },
@@ -127,6 +135,7 @@ export const WorksContent: ReadonlyArray<WorksContentProps> = [
     company_location: 'Bandung, Indonesia',
     description: '',
     milestones: [],
+    images: [],
     start_date: 'Sep 2022',
     end_date: 'Jun 2023'
   },
@@ -139,6 +148,7 @@ export const WorksContent: ReadonlyArray<WorksContentProps> = [
     company_location: 'Bandung, Indonesia',
     description: '',
     milestones: [],
+    images: [],
     start_date: 'Nov 2022',
     end_date: 'Jul 2023'
   }
