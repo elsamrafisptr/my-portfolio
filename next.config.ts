@@ -6,6 +6,7 @@ const baseConfig: NextConfig = {
   output: 'export',
   reactStrictMode: true,
   poweredByHeader: false,
+  transpilePackages: ['next-mdx-remote'],
   serverExternalPackages: [],
   images: {
     remotePatterns: [
@@ -32,7 +33,7 @@ const baseConfig: NextConfig = {
     optimizeCss: false,
     optimisticClientCache: true,
     optimizeServerReact: true,
-    optimizePackageImports: ['@imagekit/next', 'motion'],
+    optimizePackageImports: ['motion', 'next-mdx-remote'],
     serverMinification: true
   }
 }
