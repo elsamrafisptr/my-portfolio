@@ -3,6 +3,9 @@ description: 'Setup Bun ⚙️ - Cache dependencies ⚡ - Install dependencies �
 runs:
   using: 'composite'
   steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
     - name: Setup Bun ⚙️
       uses: oven-sh/setup-bun@v2
       with:
@@ -15,7 +18,9 @@ runs:
         path: |
           node_modules
           ~/.bun/cache
-        key: bun-deps-${{ hashFiles('bun.lockb') }}
+        key: ${{ runner.os }}-bun-deps-${{ hashFiles('bun.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-bun-deps-
 
     - name: Install dependencies 🔧
       shell: bash
