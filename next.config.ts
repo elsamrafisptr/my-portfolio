@@ -2,10 +2,13 @@ import type { NextConfig } from 'next'
 
 import withBundleAnalyzer from '@next/bundle-analyzer'
 
+const isProd = process.env.NODE_ENV === 'production'
+
 const baseConfig: NextConfig = {
   output: 'export',
   reactStrictMode: true,
   poweredByHeader: false,
+  transpilePackages: ['next-mdx-remote'],
   serverExternalPackages: [],
   images: {
     remotePatterns: [
@@ -30,9 +33,21 @@ const baseConfig: NextConfig = {
   },
   experimental: {
     optimizeCss: false,
+    turbopackMinify: isProd,
+    turbopackTreeShaking: isProd,
     optimisticClientCache: true,
     optimizeServerReact: true,
-    optimizePackageImports: [],
+    optimizePackageImports: [
+      'motion',
+      'next-mdx-remote',
+      'lucide-react',
+      'react',
+      'react-dom',
+      '@radix-ui/react-avatar',
+      '@radix-ui/react-separator',
+      '@radix-ui/react-slot',
+      '@radix-ui/react-tooltip'
+    ],
     serverMinification: true
   }
 }

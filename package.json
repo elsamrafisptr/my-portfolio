@@ -8,6 +8,7 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "build:stats": "cross-env ANALYZE=true npm run build",
+    "build:prod": "cross-env NODE_ENV=production npm run build",
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "eslint ./src --fix",
